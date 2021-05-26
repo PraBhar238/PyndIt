@@ -1,54 +1,66 @@
 
-# Writing a 'Guess the number' game in python
-
 import random
 
 print()
+print('     PPPPPPPP    YY      YY    NN      NN    DDDDDDDD         IIIIIIIIII    TTTTTTTTTT   ')
+print('     PP    PP     YY    YY     NNN     NN    DD     DD            II            TT       ')
+print('     PPPPPPPP       YYYY       NN NN   NN    DD     DD            II            TT       ')
+print('     PP              YY        NN   NN NN    DD     DD            II            TT       ')
+print('     PP              YY        NN     NNN    DDDDDDDD         IIIIIIIIII        TT       ')
 print()
-print()
+print('* Welcome to Pynd It, A game where you decide how the game plays by selecting a range of your desire.')
+print('* The game then picks a random number from the range you selected ')
+print('* The number of chances and the score also depend on the range you select and the way you play')
+print('! Caution: Due to some ongoing developments advice to select 40 or above as range for best experience')
+# The intro part of the game
 
-print('GGGGGGGG   UU    UU   EEEEEEE   SSSSSSS   SSSSSSS       IIIIIIII   TTTTTTTT')
-print('GG         UU    UU   EE        SS        SS               II         TT   ')
-print('GG  GGGG   UU    UU   EEEEEEE   SSSSSSS   SSSSSSS          II         TT   ')
-print('GG    GG   UU    UU   EE             SS        SS          II         TT   ')
-print('GGGGGGGG     UUUU     EEEEEEE   SSSSSSS   SSSSSSS       IIIIIIII      TT   ')
-
 print()
-print('Pick a range and guess the correct random number selected from it')
-print()
-
-print('Hey there what is your name ? ')
+print('Please state your name')
 playername = input()
-# This part is for getting the player name
+# This part asks for the name of the user
 
-print('Well ' + playername + ' pick a number for range from 1 to....')
+print('Well ' + playername + ' pick a number for range from 0 to...... ')
 playerselect = input()
-# This part gets the range input from the player for picking the random number
+# This part asks for range input from the user
 
-print('Now between 1 and ' + str(playerselect) + ' i have selected a number try to guess the right answer, You have 5 chances')
-# This part compiles both the name and range input from the player
+chancemaker = int(playerselect) / 100 * 5
+# This part creates chances based on your input range
 
-theanswer = int(random.randint(1,int(playerselect)))
-# This is the random number of the given range generator
+print('Now, Between 0 and ' + str(playerselect) + ' a number has been chosen you have ' + (str(chancemaker)) + ' chances to guess it. Good luck')
+# Putting together user data for profile building
 
-for I in range(1,6):
+theanswer = random.randint(0,int(playerselect))
+print(theanswer)
+# This is the code for choosing a random number from the users range
 
+playeranswer = ''
+I = ''
+# defining a global variable to be used locally
+
+for I in range(0, int(chancemaker)):
     playeranswer = input()
 
     if theanswer == int(playeranswer):
-        print('WOOOO correct you have won!!')
+        print('!! CORRECT !!')
         break
     elif theanswer < int(playeranswer):
-        print('You are way far off the answer, Try again you have ' + str(5 - int(I)) + ' chances')
+        print('You are way far off from the answer, Try again you have ' + str(int(chancemaker) - I - 1) + ' chances')
     elif theanswer > int(playeranswer):
-        print('You are too short from the answer, Try again you have ' + str(5 - int(I)) + ' chances')
+        print('You are too short from the answer, Try again you have ' + str(int(chancemaker) - I - 1) + ' chances')
     else:
         print('Error')
-# This entire loop runs the answering with a countdown as chances
+# The loop that intakes input and runs chances for the user
 
-if I == 5:
+if (int(chancemaker) - int(I)) != 0 and playeranswer != theanswer:
     print()
-    print('==-== * ==-==[ GAME OVER ]==-== * ==-== ')
-    print('The answer i was thinking of was ' + str(theanswer))
-# This part runs the gameover message and shows the answer if the player runs out of all the chances and does'nt get the answer
+    print('Session ended')
+    print('The answer i was thinking of was : ' + str(theanswer))
+# Displays the result and end message of the game session after ending
+
+print()
+thescore = (int(chancemaker - I) / int(chancemaker) * 100)
+print(' Your score: ~ ' + str(thescore))
+print('---------------------')
+print(' Out of:       100')
+# This score system calculates scores based on chances user used
 
