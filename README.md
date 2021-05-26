@@ -1,15 +1,16 @@
-# PyndIt
-My first python project. Find the random number the game selected from a range of your choosing in 5 or less chances. Good luck
+# Pynd It
 
+My first complete project in python.
 
-This is a simple text based game created in python to learn about python 
-In this game you create a user and input a number of your liking which will create a range from 1 to that number
-Next the game picks a random number within that range which you have to guess it out 
-You have 5 chances to guess the number correctly and the game hints if your guess is near or far from the answer
-Use it your advanatage and find the answer 
-And if you fail to find it in 5 or less guesses then you fail and the game will show the answer to you 
-Good Luck !
+Game:          
+Pynd It is a simple text based game made in python to learn python.
+The classic 'Guess the number' game with an added twist of custom range for random selection where you the user can select the range for random number selection. 
+And with added update the Score system now calculates the score based on your selected range, So higher the risk higher the score.
+Also another update is Chance system which calcluates the number of chances based on the user's selected range  
 
+Instructions:             
+The game is simple with walking instructions, You as the user input a name and the range you want the random number be selected from.
+Guess the number selected by the algorithm after this in the lowest tries possible to get the highest score. Good luck.
 
 
 created by - Argen Feline
